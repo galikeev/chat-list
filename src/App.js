@@ -1,7 +1,7 @@
-import React from 'react';
-import {PageIndex} from "./pages/index";
+import PageIndex from "./pages/index/index";
 
 function App() {
+
   return (
     <div className="App">
       <PageIndex />

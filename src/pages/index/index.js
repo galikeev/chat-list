@@ -35,7 +35,9 @@ const PageIndex = () => {
 
     return (
         <div className="page">
-            <ChatList chatList={chatList} onChatSelected={onChatSelected}/>
+            <ChatList 
+                chatList={chatList} 
+                onChatSelected={onChatSelected}/>
             <div className="page__wrapper">
                 <Header header={header}/>
                 <MessagesList messages={messages}/>

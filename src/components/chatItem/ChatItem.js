@@ -8,7 +8,7 @@ const ChatItem = ({avatar, last_message, title, onChatSelected}) => {
 
     const time = dayjs.unix(last_message.created_at).format('HH:mm');
 
-    const titleLength = title.length > 20 ? title.substring(0, 21) + '...' : title;
+    const titleLength = title.length > 20 ? title.substring(0, 20) + '...' : title;
     const messageLength = last_message.message.length > 45 ? last_message.message.substring(0, 45) + '...' : last_message.message;
     
     return (

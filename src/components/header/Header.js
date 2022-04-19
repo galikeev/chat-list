@@ -1,9 +1,11 @@
+import { IconDialog } from '../../assets';
 import './header.scss';
 
 const Header = ({header}) => {
     return (
         <div className="header">
-            <h3>{header ? header : 'Диалог'}</h3>
+            <img src={IconDialog} alt="icon dialog" />
+            <h3>{header ? header : 'Dialog name'}</h3>
         </div>
     );
 };

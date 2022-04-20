@@ -21,7 +21,6 @@ const ChatListService = () => {
         const response = axios.get(`https://api.clout.one/test/${URLS.LIST}`);
         return response
             .then(data => {
-                console.log(data.data.response)
                 dispatch(chatsFetched(data.data.response))
             })
             .catch(error => {
@@ -35,7 +34,6 @@ const ChatListService = () => {
         const response = axios.get(`https://api.clout.one/test/message.get?chat_id=${url}&offset=0&limit=20`);
         return response
             .then(data => {
-                console.log(data.data.response)
                 dispatch(messagesFetched(data.data.response))
             }).catch(error => {
                 console.log(error)

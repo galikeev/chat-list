@@ -31,8 +31,8 @@ const reducer = (state = initialState, action) => {
         case 'MESSAGES_FETCHED':
             return {
                 ...state,
-                status: 'complete',
-                statusMessages: action.payload
+                statusMessages: 'complete',
+                messages: action.payload
             }
         case 'MESSAGES_FETCHING_ERROR':
             return {

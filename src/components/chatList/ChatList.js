@@ -17,7 +17,6 @@ const ChatList = ({chatList, onChatSelected}) => {
 
     return (
         <div className="chats">
-            <h3 className="chats__title">All chats</h3>
             {renderElems}
         </div>
     );

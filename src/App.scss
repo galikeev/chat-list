@@ -49,6 +49,10 @@ input::-webkit-inner-spin-button {
 
 .page {
     display: flex;
+    &__left {
+        width: 360px;
+        border-right: 1px solid #A19F9D;
+    }
     &__wrapper {
         width: 100%;
     }

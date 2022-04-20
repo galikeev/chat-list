@@ -2,6 +2,7 @@ const initialState = {
     chats: [],
     statusChats: 'complete',
     statusMessages: 'complete',
+    dialogTitle: '',
     messages: [],
 };
 
@@ -38,6 +39,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 statusMessages: 'error'
+            }
+        case 'DIALOG_TITLE':
+            return {
+                ...state,
+                dialogTitle: action.payload
             }
         default: return state
     }

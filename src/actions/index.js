@@ -35,3 +35,10 @@ export const messagesFetchingError = () => {
         type: 'MESSAGES_FETCHING_ERROR'
     }
 }
+
+export const headerTitle = (title) => {
+    return {
+        type: 'DIALOG_TITLE',
+        payload: title
+    }
+}

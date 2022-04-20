@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import ChatListService from '../../api/chat/index';
+
+import { headerTitle } from "../../actions";
 
 import ChatList from "../../components/chatList/ChatList";
 import Header from "../../components/header/Header";
@@ -11,7 +13,7 @@ import Spinner from '../../components/spinner/Spinner';
 
 const PageIndex = () => {
 
-    const [header, setHeader] = useState('');
+    const dispatch = useDispatch();
 
     const {getChatList, getMessagesList} = ChatListService();
 
@@ -19,6 +21,7 @@ const PageIndex = () => {
         chats,
         statusChats,
         statusMessages,
+        dialogTitle,
         messages
     } = useSelector(state => state);
 
@@ -28,7 +31,7 @@ const PageIndex = () => {
     
     const onChatSelected = (id) => {
         const chat = chats.find(elem => elem.id === id);
-        setHeader(chat.title);
+        dispatch(headerTitle(chat.title));
         getMessagesList(chat.id)
     }
 
@@ -41,7 +44,7 @@ const PageIndex = () => {
                     onChatSelected={onChatSelected}/>}
             </div>
             <div className="page__wrapper">
-                <Header header={header}/>
+                <Header header={dialogTitle}/>
                 {statusMessages === 'loading' ? <Spinner/> : <MessagesList messages={messages}/>}
             </div>
         </div>
